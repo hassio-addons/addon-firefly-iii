@@ -1,0 +1,40 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: Firefly III
+# Runs the PHP-FPM daemon
+# ==============================================================================
+
+#sleep 1000000
+
+declare key
+# Wait for MySQL to become available
+for _ in $(seq 1 30); do
+    if echo 'SELECT 1' | mysql &> /dev/null; then
+        break
+    fi
+    sleep 1
+done
+
+key=$(cat /data/firefly/appkey.txt)
+export APP_KEY=${key}
+export LOG_CHANNEL=stdout
+export APP_ENV=local
+export IS_DOCKER=true
+
+export DB_HOST=localhost
+export DB_DATABASE=firefly
+export DB_USERNAME=firefly
+export DB_PASSWORD=firefly
+
+bashio::log.info "Installing/updating Database"
+php /var/www/firefly/artisan package:discover
+php /var/www/firefly/artisan migrate --seed
+php /var/www/firefly/artisan firefly:decrypt-all
+php /var/www/firefly/artisan firefly:upgrade-database
+php /var/www/firefly/artisan firefly:verify
+php /var/www/firefly/artisan passport:install
+php /var/www/firefly/artisan cache:clear
+
+bashio::log.info "Starting PHP-FPM..."
+
+exec php-fpm7 --nodaemonize
