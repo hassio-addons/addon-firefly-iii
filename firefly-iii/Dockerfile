@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:4.0.1
+ARG BUILD_FROM=hassioaddons/ubuntu-base:3.1.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,46 +8,52 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache \
-        mariadb=10.3.16-r0 \
-        mariadb-client=10.3.16-r0 \
-        nginx=1.16.0-r2 \
-        php7-bcmath=7.3.7-r0 \
-        php7-curl=7.3.7-r0 \
-        php7-fileinfo=7.3.7-r0 \
-        php7-fpm=7.3.7-r0 \
-        php7-gd=7.3.7-r0 \
-        php7-intl=7.3.7-r0 \
-        php7-json=7.3.7-r0 \
-        php7-ldap=7.3.7-r0 \
-        php7-mbstring=7.3.7-r0 \
-        php7-mysqlnd=7.3.7-r0 \
-        php7-pdo_mysql=7.3.7-r0 \
-        php7-session=7.3.7-r0 \
-        php7-simplexml=7.3.7-r0 \
-        php7-tokenizer=7.3.7-r0 \
-        php7-xml=7.3.7-r0 \
-        php7-zip=7.3.7-r0 \
-        php7=7.3.7-r0 \
+    apt-get update \
     \
-    && apk add --no-cache --virtual .build-dependencies \
-        composer=1.8.6-r0 \
+    && apt-get install -y --no-install-recommends \
+        locales=2.27-3ubuntu1 \
+        mariadb-server=1:10.1.40-0ubuntu0.18.04.1 \
+        mariadb-client=1:10.1.40-0ubuntu0.18.04.1 \
+        nginx=1.14.0-0ubuntu1.2 \
+        php7.2-bcmath=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-curl=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-common=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-fpm=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-gd=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-intl=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-json=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-ldap=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-mbstring=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-mysql=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-opcache=7.2.19-0ubuntu0.18.04.1 \
+        #php-pdo_mysql \
+        #php-session \
+        php7.2-xml=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-zip=7.2.19-0ubuntu0.18.04.1 \
+        php7.2=7.2.19-0ubuntu0.18.04.1 \
+        composer=1.6.3-1 \
     \
     && FIREFLY_VERSION=4.7.17\
     \
     && curl -J -L -o /tmp/firefly.tar.gz \
         https://github.com/firefly-iii/firefly-iii/archive/${FIREFLY_VERSION}.tar.gz \
     &&  mkdir -p /var/www/firefly \
-    && tar zxvf /tmp/firefly.tar.gz -C \
+    && tar zxf /tmp/firefly.tar.gz -C \
         /var/www/firefly --strip-components=1 \
+    && echo "de_DE.UTF-8 UTF-8\nen_US.UTF-8 UTF-8\nes_ES.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8\nid_ID.UTF-8 UTF-8\nit_IT.UTF-8 UTF-8\nnl_NL.UTF-8 UTF-8\npl_PL.UTF-8 UTF-8\npt_BR.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8\ntr_TR.UTF-8 UTF-8\nzh_TW.UTF-8 UTF-8\nzh_CN.UTF-8 UTF-8\n\n" > /etc/locale.gen \
+    && locale-gen \
     && cd /var/www/firefly \
-    \
+    && COMPOSER_ALLOW_SUPERUSER=1 \
     && composer install --prefer-dist --no-dev --no-scripts --no-suggest \
-    && apk del --purge .build-dependencies \
+    && apt-get purge -y --auto-remove \
+        composer \
     \
     && find /var/www/firefly -type f -name "*.md" -depth -exec rm -f {} \; \
     && rm -f -r \
-         /tmp/*
+        /tmp/* \
+        /etc/nginx \
+        /var/{cache,log}/* \
+        /var/lib/apt/lists/*
 
 # Copy root filesystem
 COPY rootfs /
