@@ -5,7 +5,7 @@
   "description": "A free and open source personal finance manager",
   "url": "https://github.com/hassio-addons/addon-firefly-iii",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
-  "ingress": true,
+  "ingress": false,
   "ingress_port": 1337,
   "startup": "application",
   "arch": [
