@@ -3,7 +3,6 @@
 # Community Hass.io Add-ons: Bookstack
 # This file initialises the MySQL database
 # ==============================================================================
-
 if ! bashio::fs.directory_exists "/data/mysql"; then
     bashio::log "Creating MySql directory"
     mkdir /data/mysql
@@ -13,7 +12,7 @@ fi
 if ! bashio::fs.directory_exists "/data/mysql/mysql"; then
 
     bashio::log.info "Initializing database..."
-    s6-setuidgid mysql mysql_install_db --datadir=/data/mysql \
+    s6-setuidgid mysql mysql_install_db --datadir=/data/mysql
     # Start MySQL.
     /usr/bin/mysqld_safe --datadir=/data/mysql \
         --tmpdir=/tmp/ --user=mysql &
@@ -42,14 +41,12 @@ if ! bashio::fs.directory_exists "/data/mysql/mysql"; then
     bashio::log.info "Creating User..."
     echo "CREATE USER 'firefly'@'localhost' IDENTIFIED BY 'firefly' ;" | mysql
     echo "GRANT ALL ON \`firefly\`.* TO 'firefly'@'localhost' ;" | mysql
-
+    echo "FLUSH  PRIVILEGES ;" | mysql
     # Stop the MySQL server
-    childpid=$(pgrep -P "$pid")
-    if ! kill -s TERM "$childpid" || ! wait "$pid"; then
+    if ! kill -s TERM "$pid" || ! wait "$pid"; then
         bashio::exit.nok "Initialization of database failed."
     fi
 fi
-
 #Setup error logging
 ln -sf /dev/stderr /data/mysql/log.err 
 chown mysql:mysql /data/mysql/log.err
