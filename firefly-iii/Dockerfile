@@ -26,8 +26,6 @@ RUN \
         php7.2-mbstring=7.2.19-0ubuntu0.18.04.1 \
         php7.2-mysql=7.2.19-0ubuntu0.18.04.1 \
         php7.2-opcache=7.2.19-0ubuntu0.18.04.1 \
-        #php-pdo_mysql \
-        #php-session \
         php7.2-xml=7.2.19-0ubuntu0.18.04.1 \
         php7.2-zip=7.2.19-0ubuntu0.18.04.1 \
         php7.2=7.2.19-0ubuntu0.18.04.1 \
@@ -53,7 +51,8 @@ RUN \
         /tmp/* \
         /etc/nginx \
         /var/{cache,log}/* \
-        /var/lib/apt/lists/*
+        /var/lib/apt/lists/* \
+        /var/lib/mysql/*logfile*
 
 # Copy root filesystem
 COPY rootfs /
