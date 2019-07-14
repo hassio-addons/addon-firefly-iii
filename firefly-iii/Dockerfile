@@ -52,7 +52,10 @@ RUN \
         /etc/nginx \
         /var/{cache,log}/* \
         /var/lib/apt/lists/* \
-        /var/lib/mysql/*logfile*
+        /var/lib/mysql/*logfile* \
+        \
+    && mkdir -p /var/log/nginx \
+    && touch /var/log/nginx/error.log
 
 # Copy root filesystem
 COPY rootfs /
