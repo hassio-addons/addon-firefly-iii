@@ -7,7 +7,7 @@
 if ! bashio::fs.directory_exists "/data/firefly/upload"; then
     bashio::log "Creating upload directory"
     mkdir -p /data/firefly/upload
-    chown nginx:nginx /data/firefly/upload
+    chown www-data:www-data /data/firefly/upload
 fi
 
 rm -r /var/www/firefly/storage/upload
