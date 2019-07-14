@@ -24,4 +24,5 @@ ingress_interface=$(bashio::addon.ip_address)
 sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
 
 ingress_entry=$(bashio::addon.ingress_entry)
-sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/php7/php-fpm.d/ingress.conf
+sed -i "s#%%ingress_entry%%#${ingress_entry}#g" \
+    /etc/php/7.2/fpm/pool.d/ingress.conf
