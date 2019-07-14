@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Bookstack
+# Community Hass.io Add-ons: Firefly
 # This file initialises the MySQL database
 # ==============================================================================
 if ! bashio::fs.directory_exists "/data/mysql"; then
