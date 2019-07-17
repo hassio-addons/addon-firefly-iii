@@ -9,9 +9,16 @@ if ! bashio::fs.directory_exists "/data/firefly/upload"; then
     mkdir -p /data/firefly/upload
     chown www-data:www-data /data/firefly/upload
 fi
-
+if ! bashio::fs.directory_exists "/data/firefly/database"; then
+    bashio::log "Creating database directory"
+    mkdir -p /data/firefly/database
+	touch /data/firefly/database/database.sqlite
+    chown www-data:www-data /data/firefly/database
+fi
 rm -r /var/www/firefly/storage/upload
 ln -s /data/firefly/upload /var/www/firefly/storage/upload
+rm -r /var/www/firefly/storage/database
+ln -s /data/firefly/database /var/www/firefly/storage/database
 
 declare key
 #Create API key if needed

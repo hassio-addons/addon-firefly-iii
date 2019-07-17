@@ -12,8 +12,6 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         locales=2.27-3ubuntu1 \
-        mariadb-server=1:10.1.40-0ubuntu0.18.04.1 \
-        mariadb-client=1:10.1.40-0ubuntu0.18.04.1 \
         nginx=1.14.0-0ubuntu1.2 \
         php7.2-bcmath=7.2.19-0ubuntu0.18.04.1 \
         php7.2-curl=7.2.19-0ubuntu0.18.04.1 \
@@ -26,6 +24,8 @@ RUN \
         php7.2-mbstring=7.2.19-0ubuntu0.18.04.1 \
         php7.2-mysql=7.2.19-0ubuntu0.18.04.1 \
         php7.2-opcache=7.2.19-0ubuntu0.18.04.1 \
+        php7.2-sqlite3=7.2.19-0ubuntu0.18.04.1 \
+        sqlite3=3.22.0-1ubuntu0.1 \
         php7.2-xml=7.2.19-0ubuntu0.18.04.1 \
         php7.2-zip=7.2.19-0ubuntu0.18.04.1 \
         php7.2=7.2.19-0ubuntu0.18.04.1 \

@@ -20,11 +20,12 @@ export APP_KEY=${key}
 export LOG_CHANNEL=stdout
 export APP_ENV=local
 export IS_DOCKER=true
+export DB_CONNECTION="sqlite"
 
-export DB_HOST=localhost
-export DB_DATABASE=firefly
-export DB_USERNAME=firefly
-export DB_PASSWORD=firefly
+#export DB_HOST=localhost
+#export DB_DATABASE=firefly
+#export DB_USERNAME=firefly
+#export DB_PASSWORD=firefly
 
 bashio::log.info "Installing/updating Database"
 php /var/www/firefly/artisan package:discover
