@@ -4,29 +4,25 @@
 # Runs the PHP-FPM daemon
 # ==============================================================================
 
-#sleep 1000000
-
 declare key
-# Wait for MySQL to become available
-for _ in $(seq 1 30); do
-    if echo 'SELECT 1' | mysql &> /dev/null; then
-        break
-    fi
-    sleep 1
-done
 
 key=$(cat /data/firefly/appkey.txt)
 export APP_KEY=${key}
 export LOG_CHANNEL=stdout
 export APP_ENV=local
-export IS_DOCKER=true
-export DB_CONNECTION="sqlite"
-
-#export DB_HOST=localhost
-#export DB_DATABASE=firefly
-#export DB_USERNAME=firefly
-#export DB_PASSWORD=firefly
-
+if bashio::config.equals 'database' 'sqlite';then
+    export DB_CONNECTION='sqlite'
+fi
+if bashio::config.equals 'database' 'mysql';then
+    DB_HOST=$(bashio::config "mysql_host")
+    DB_DATABASE=$(bashio::config "mysql_database")
+    DB_USERNAME=$(bashio::config "mysql_user")
+    DB_PASSWORD=$(bashio::config "mysql_password")
+    export DB_HOST
+    export DB_DATABASE
+    export DB_USERNAME
+    export DB_PASSWORD
+fi
 bashio::log.info "Installing/updating Database"
 php /var/www/firefly/artisan package:discover
 php /var/www/firefly/artisan migrate --seed

@@ -50,14 +50,24 @@ Example add-on configuration:
 
 ```json
 {
+  "database": "sqlite",
   "log_level": "info",
   "ssl": false,
   "certfile": "fullchain.pem",
-  "keyfile": "privkey.pem"
+  "keyfile": "privkey.pem",
+  "mysql_host": "core-mariadb",
+  "mysql_database": "firefly",
+  "mysql_user": "firefly",
+  "mysql_password": "firefly"
 }
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
+
+### Option: `database`
+
+Should be set to either `sqlite` or `mysql`. Please note mysql is for an
+external database to the addon.
 
 ### Option: `log_level`
 
@@ -94,9 +104,35 @@ The private key file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is the default for Hass.io_
 
+### Option: `mysql_host`
+
+The hostname for the MySQL/MariaDB database, set to `core-mariadb` if using the
+Homeassistant Core MariaDB addon.
+
+### Option: `mysql_database`
+
+Only applies if external MYSQL database is used, the name of the database.
+
+### Option: `mysql_user`
+
+Only applies if external MYSQL database is used, the username with permissions.
+
+### Option: `mysql_password`
+
+Only applies if external MYSQL database is used, the password of the above user.
+
+## Storing data in MySQL/MariaDB
+
+By default, Firefly-III will use a local SQLLite database, although this is
+supported by the developer it is not recommended.  Please strongly consider
+using an external MYSQL/MariaDB database. PLEASE NOTE there is no easy upgrade
+process from SQLite to MYSQL/MariaDB.
+
+
 ## Known issues and limitations
 
 SMTP support is disabled.
+Ingress is not supported.
 
 ## Changelog & Releases
 

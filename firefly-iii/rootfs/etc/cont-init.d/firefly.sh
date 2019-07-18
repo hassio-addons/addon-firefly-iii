@@ -13,7 +13,7 @@ if ! bashio::fs.directory_exists "/data/firefly/database"; then
     bashio::log "Creating database directory"
     mkdir -p /data/firefly/database
 	touch /data/firefly/database/database.sqlite
-    chown www-data:www-data /data/firefly/database
+    chown -R www-data:www-data /data/firefly/database
 fi
 rm -r /var/www/firefly/storage/upload
 ln -s /data/firefly/upload /var/www/firefly/storage/upload
@@ -29,4 +29,26 @@ if ! bashio::fs.file_exists "/data/firefly/appkey.txt"; then
  	key=$(php /var/www/firefly/artisan key:generate --show)
  	echo "${key}" > /data/firefly/appkey.txt
  	bashio::log.info "App Key generated: ${key}"
+fi
+if bashio::config.equals 'database' 'mysql';then
+	if ! bashio::config.exists 'mysql_host';then
+		bashio::log.fatal \
+		"MYSQL database has been specified but no host is configured"
+		bashio::exit.nok
+	fi
+	if ! bashio::config.has_value 'mysql_database';then
+		bashio::log.fatal \
+		"MYSQL database has been specified but no database is configured"
+		bashio::exit.nok
+	fi
+	if ! bashio::config.has_value 'mysql_user';then
+		bashio::log.fatal \
+		"MYSQL database has been specified but no user is configured"
+		bashio::exit.nok
+	fi
+	if ! bashio::config.has_value 'mysql_password';then
+		bashio::log.fatal \
+		"MYSQL database has been specified but no password is configured"
+		bashio::exit.nok
+	fi
 fi
