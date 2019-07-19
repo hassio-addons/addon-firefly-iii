@@ -1,7 +1,7 @@
 server {
     listen 80 default_server ssl http2;
 
-    include /etc/nginx/includes/server_params;
+    include /etc/nginx/includes/server_params.conf;
     include /etc/nginx/includes/ssl_params.conf;
     include /etc/nginx/includes/php.conf;
 
