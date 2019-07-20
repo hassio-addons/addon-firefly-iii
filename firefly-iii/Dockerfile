@@ -31,7 +31,7 @@ RUN \
         php7.2=7.2.19-0ubuntu0.18.04.1 \
         composer=1.6.3-1 \
     \
-    && FIREFLY_VERSION=4.7.17\
+    && FIREFLY_VERSION=4.7.17.3\
     \
     && curl -J -L -o /tmp/firefly.tar.gz \
         https://github.com/firefly-iii/firefly-iii/archive/${FIREFLY_VERSION}.tar.gz \
