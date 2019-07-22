@@ -133,8 +133,8 @@ process from SQLite to MYSQL/MariaDB.
 
 ## Known issues and limitations
 
-SMTP support is disabled.
-Ingress is not supported.
+- SMTP support is disabled.
+- Ingress is not supported.
 
 ## Changelog & Releases
 
