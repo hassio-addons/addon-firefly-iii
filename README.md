@@ -29,6 +29,8 @@ use it to save and organise money.
 
 Further information can be found at [Firefly-III].
 
+![Firefly screenshot](images/screenshot.png)
+
 ## Installation
 
 The installation of this add-on is pretty straightforward and not different in
