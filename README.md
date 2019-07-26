@@ -18,7 +18,7 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
-Firefly-III.
+Firefly-III - A free and open source personal finance manager
 
 ## About
 
