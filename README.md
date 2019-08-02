@@ -130,7 +130,6 @@ supported by the developer it is not recommended.  Please strongly consider
 using an external MYSQL/MariaDB database. PLEASE NOTE there is no easy upgrade
 process from SQLite to MYSQL/MariaDB.
 
-
 ## Known issues and limitations
 
 - SMTP support is disabled.
