@@ -31,17 +31,16 @@ RUN \
         php7.2=7.2.19-0ubuntu0.18.04.1 \
         composer=1.6.3-1 \
     \
-    && FIREFLY_VERSION=4.7.17.3\
+    && FIREFLY_VERSION=4.7.17.5\
     \
     && curl -J -L -o /tmp/firefly.tar.gz \
         https://github.com/firefly-iii/firefly-iii/archive/${FIREFLY_VERSION}.tar.gz \
     &&  mkdir -p /var/www/firefly \
     && tar zxf /tmp/firefly.tar.gz -C \
         /var/www/firefly --strip-components=1 \
-    && echo "de_DE.UTF-8 UTF-8\nen_US.UTF-8 UTF-8\nes_ES.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8\nid_ID.UTF-8 UTF-8\nit_IT.UTF-8 UTF-8\nnl_NL.UTF-8 UTF-8\npl_PL.UTF-8 UTF-8\npt_BR.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8\ntr_TR.UTF-8 UTF-8\nzh_TW.UTF-8 UTF-8\nzh_CN.UTF-8 UTF-8\n\n" > /etc/locale.gen \
+    && printf "de_DE.UTF-8 UTF-8\nen_US.UTF-8 UTF-8\nes_ES.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8\nid_ID.UTF-8 UTF-8\nit_IT.UTF-8 UTF-8\nnl_NL.UTF-8 UTF-8\npl_PL.UTF-8 UTF-8\npt_BR.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8\ntr_TR.UTF-8 UTF-8\nzh_TW.UTF-8 UTF-8\nzh_CN.UTF-8 UTF-8\n\n" > /etc/locale.gen \
     && locale-gen \
     && cd /var/www/firefly \
-    && COMPOSER_ALLOW_SUPERUSER=1 \
     && composer install --prefer-dist --no-dev --no-scripts --no-suggest \
     && apt-get purge -y --auto-remove \
         composer \
