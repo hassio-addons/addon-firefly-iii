@@ -28,7 +28,6 @@ php /var/www/firefly/artisan package:discover
 php /var/www/firefly/artisan migrate --seed
 php /var/www/firefly/artisan firefly:decrypt-all
 php /var/www/firefly/artisan firefly:upgrade-database
-php /var/www/firefly/artisan firefly:verify
 php /var/www/firefly/artisan passport:install
 php /var/www/firefly/artisan cache:clear
 
