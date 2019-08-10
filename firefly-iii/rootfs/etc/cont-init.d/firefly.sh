@@ -52,3 +52,7 @@ if bashio::config.equals 'database' 'mysql';then
 		bashio::exit.nok
 	fi
 fi
+#TODO Remove when fixed
+#Temporary fix for installation issue
+sed -i "s/generate-keys/passport:install/g" \
+	/var/www/firefly/app/Console/Commands/Upgrade/UpgradeDatabase.php
