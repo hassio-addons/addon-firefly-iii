@@ -52,6 +52,9 @@ RUN \
         /var/{cache,log}/* \
         /var/lib/apt/lists/* \
         /var/lib/mysql/*logfile* \
+        /var/www/firefly/Docker* \
+        /var/www/firefly/docker* \
+        /var/www/firefly/phpunit* \
         \
     && mkdir -p /var/log/nginx \
     && touch /var/log/nginx/error.log
