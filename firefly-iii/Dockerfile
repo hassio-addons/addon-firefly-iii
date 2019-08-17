@@ -12,19 +12,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         locales=2.27-3ubuntu1 \
-        nginx=1.14.0-0ubuntu1.3 \
-        php7.2-bcmath=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-curl=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-common=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-fpm=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-gd=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-intl=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-json=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-ldap=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-mbstring=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-mysql=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-opcache=7.2.19-0ubuntu0.18.04.1 \
-        php7.2-sqlite3=7.2.19-0ubuntu0.18.04.1 \
+        nginx=1.14.0-0ubuntu1.5 \
         sqlite3=3.22.0-1ubuntu0.1 \
         php7.2-xml=7.2.19-0ubuntu0.18.04.1 \
         php7.2-zip=7.2.19-0ubuntu0.18.04.1 \
