@@ -12,7 +12,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         locales=2.27-3ubuntu1 \
-        nginx=1.14.0-0ubuntu1.5 \
+        nginx=1.14.0-0ubuntu1.6 \
         php7.2-bcmath=7.2.19-0ubuntu0.18.04.2 \
         php7.2-curl=7.2.19-0ubuntu0.18.04.2 \
         php7.2-common=7.2.19-0ubuntu0.18.04.2 \
