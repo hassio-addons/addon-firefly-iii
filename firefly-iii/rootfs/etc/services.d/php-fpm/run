@@ -33,4 +33,4 @@ php /var/www/firefly/artisan cache:clear
 
 bashio::log.info "Starting PHP-FPM..."
 
-exec php-fpm7.2 --nodaemonize
+exec php-fpm7.3 --nodaemonize
