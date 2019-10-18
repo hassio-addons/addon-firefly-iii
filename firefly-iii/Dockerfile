@@ -21,21 +21,21 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         composer=1.6.3-1 \
-        php7.3-bcmath=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-curl=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-common=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-fpm=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-gd=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-intl=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-json=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-ldap=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-mbstring=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-mysql=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-opcache=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-sqlite3=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-xml=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-zip=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3=7.3.9-1+ubuntu18.04.1+deb.sury.org+1 \    
+        php7.3-bcmath=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-curl=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-common=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-fpm=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-gd=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-intl=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-json=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-ldap=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-mbstring=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-mysql=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-opcache=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-sqlite3=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-xml=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3-zip=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \    
     \
     && FIREFLY_VERSION=4.8.1.1 \
     \
