@@ -37,7 +37,7 @@ RUN \
         php7.3-zip=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \
         php7.3=7.3.10-1+ubuntu18.04.1+deb.sury.org+1 \    
     \
-    && FIREFLY_VERSION=4.8.1.4 \
+    && FIREFLY_VERSION=4.8.1.5 \
     \
     && curl -J -L -o /tmp/firefly.tar.gz \
         https://github.com/firefly-iii/firefly-iii/archive/${FIREFLY_VERSION}.tar.gz \
