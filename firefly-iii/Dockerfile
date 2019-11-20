@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:4.0.0
+ARG BUILD_FROM=hassioaddons/ubuntu-base:4.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -35,7 +35,7 @@ RUN \
         php7.3-sqlite3=7.3.11-1+ubuntu18.04.1+deb.sury.org+1 \
         php7.3-xml=7.3.11-1+ubuntu18.04.1+deb.sury.org+1 \
         php7.3-zip=7.3.11-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3=7.3.11-1+ubuntu18.04.1+deb.sury.org+1 \
+        php7.3=7.3.11-1+ubuntu18.04.1+deb.sury.org+1 \    
     \
     && FIREFLY_VERSION=4.8.1.8 \
     \
