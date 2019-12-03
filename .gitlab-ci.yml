@@ -9,5 +9,6 @@ variables:
 
   ADDON_AARCH64_BASE: "hassioaddons/debian-base:2.0.0"
   ADDON_AMD64_BASE: "hassioaddons/debian-base:2.0.0"
+  ADDON_ARMHF_BASE: "hassioaddons/debian-base:2.0.0"
   ADDON_ARMV7_BASE: "hassioaddons/debian-base:2.0.0"
   ADDON_I386_BASE: "hassioaddons/debian-base:2.0.0"
