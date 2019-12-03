@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:4.0.1
+ARG BUILD_FROM=hassioaddons/debian-base:2.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -11,31 +11,26 @@ RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        locales=2.27-3ubuntu1 \
-        nginx=1.14.0-0ubuntu1.6 \
-        software-properties-common=0.96.24.32.11 \
-        sqlite3=3.22.0-1ubuntu0.1 \
-    # Now needs php7.3
-    && add-apt-repository ppa:ondrej/php \
-    && apt-get update \
-    \
-    && apt-get install -y --no-install-recommends \
-        composer=1.6.3-1 \
-        php7.3-bcmath=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-curl=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-common=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-fpm=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-gd=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-intl=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-json=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-ldap=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-mbstring=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-mysql=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-opcache=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-sqlite3=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-xml=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3-zip=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \
-        php7.3=7.3.12-1+ubuntu18.04.1+deb.sury.org+1 \    
+        locales=2.28-10 \
+        nginx=1.14.2-2+deb10u1 \
+        software-properties-common=0.96.20.2-2 \
+        sqlite3=3.27.2-3 \
+        composer=1.8.4-1 \
+        php7.3-bcmath=7.3.11-1~deb10u1 \
+        php7.3-curl=7.3.11-1~deb10u1 \
+        php7.3-common=7.3.11-1~deb10u1 \
+        php7.3-fpm=7.3.11-1~deb10u1 \
+        php7.3-gd=7.3.11-1~deb10u1 \
+        php7.3-intl=7.3.11-1~deb10u1 \
+        php7.3-json=7.3.11-1~deb10u1 \
+        php7.3-ldap=7.3.11-1~deb10u1 \
+        php7.3-mbstring=7.3.11-1~deb10u1 \
+        php7.3-mysql=7.3.11-1~deb10u1 \
+        php7.3-opcache=7.3.11-1~deb10u1 \
+        php7.3-sqlite3=7.3.11-1~deb10u1 \
+        php7.3-xml=7.3.11-1~deb10u1 \
+        php7.3-zip=7.3.11-1~deb10u1 \
+        php7.3=7.3.11-1~deb10u1 \    
     \
     && FIREFLY_VERSION=4.8.2 \
     \
