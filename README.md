@@ -36,9 +36,8 @@ Further information can be found at [Firefly-III].
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "Firefly-III" add-on.
-1. Start the "Firefly-III" add-on
+1. Search for the "Firefly-III" add-on in the Hass.io add-on store and install it.
+1. Start the "Firefly-III" add-on.
 1. Check the logs of the "Firefly-III" add-on to see if everything went well.
 
 **NOTE**: Do not add this repository to Hass.io, please use:
@@ -192,7 +191,7 @@ our [GitHub Repository][repository].
 
 MIT License
 
-Copyright (c) 2019 Paul Sinclair
+Copyright (c) 2020 Paul Sinclair
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -236,7 +235,7 @@ SOFTWARE.
 [issue]: https://github.com/hassio-addons/addon-firefly-iii/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-firefly-iii.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2019.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
 [npm-packages]: https://www.npmjs.com
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [reddit]: https://reddit.com/r/homeassistant
