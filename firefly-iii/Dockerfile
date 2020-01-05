@@ -30,7 +30,7 @@ RUN \
         php7.3-sqlite3=7.3.11-1~deb10u1 \
         php7.3-xml=7.3.11-1~deb10u1 \
         php7.3-zip=7.3.11-1~deb10u1 \
-        php7.3=7.3.11-1~deb10u1 \    
+        php7.3=7.3.11-1~deb10u1 \
     \
     && FIREFLY_VERSION=4.8.2 \
     \
