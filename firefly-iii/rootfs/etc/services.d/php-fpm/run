@@ -35,6 +35,7 @@ php /var/www/firefly/artisan firefly:decrypt-all
 php /var/www/firefly/artisan firefly:upgrade-database
 php /var/www/firefly/artisan passport:install
 php /var/www/firefly/artisan cache:clear
+php /var/www/firefly/artisan config:cache
 
 bashio::log.info "Starting PHP-FPM..."
 
