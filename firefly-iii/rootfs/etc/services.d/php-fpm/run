@@ -10,9 +10,10 @@ key=$(cat /data/firefly/appkey.txt)
 export APP_KEY=${key}
 export LOG_CHANNEL=stdout
 export APP_ENV=local
-if bashio::config.equals 'database' 'sqlite';then
-    export DB_CONNECTION='sqlite'
-fi
+
+DB_CONNECTION=$(bashio::config "database")
+export DB_CONNECTION
+
 if bashio::config.equals 'database' 'mysql';then
     DB_HOST=$(bashio::config "mysql_host")
     DB_DATABASE=$(bashio::config "mysql_database")
