@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "Firefly-III - Community Hass.io Add-on for Home Assistant"
+  description: "Firefly-III - Community Home Assistant Add-on"
   homepage: https://addons.community
-  topics: fireflyiii, hassio-addons, hassio, hass, home-assistant, homeassistant
+  topics: fireflyiii, addons, home-assistant, homeassistant
   private: false
   has_issues: true
   has_projects: false

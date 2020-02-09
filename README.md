@@ -1,4 +1,4 @@
-# Community Hass.io Add-ons: Firefly-III
+# Community Home Assistant Add-ons: Firefly-III
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -34,9 +34,9 @@ Further information can be found at [Firefly-III].
 ## Installation
 
 The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+comparison to installing any other Home Assistant add-on.
 
-1. Search for the "Firefly-III" add-on in the Hass.io add-on store and install it.
+1. Search for the "Firefly-III" add-on in the add-on store and install it.
 1. Start the "Firefly-III" add-on.
 1. Check the logs of the "Firefly-III" add-on to see if everything went well.
 
@@ -94,13 +94,13 @@ Panel. Set it `true` to enable it, `false` otherwise.
 
 The certificate file to use for SSL.
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default for Hass.io_
+**Note**: _The file MUST be stored in `/ssl/`, which is the default._
 
 ### Option: `keyfile`
 
 The private key file to use for SSL.
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default for Hass.io_
+**Note**: _The file MUST be stored in `/ssl/`, which is the default._
 
 ### Option: `mysql_host`
 
@@ -151,7 +151,7 @@ Got questions?
 
 You have several options to get them answered:
 
-- The [Community Hass.io Add-ons Discord chat server][discord] for add-on
+- The [Community Home Assistant Add-ons Discord chat server][discord] for add-on
   support and feature requests.
 - The [Home Assistant Discord chat server][discord-ha] for general Home
   Assistant discussions and questions.
@@ -177,11 +177,11 @@ The original setup of this repository is by [Paul Sinclair][sinclairpaul].
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
 
-## We have got some Hass.io add-ons for you
+## We have got some add-ons for you
 
-Want some more functionality to your Hass.io Home Assistant instance?
+Want some more functionality to your Home Assistant instance?
 
-We have created multiple add-ons for Hass.io. For a full list, check out
+We have created multiple add-ons for Home Assistant. For a full list, check out
 our [GitHub Repository][repository].
 
 ## License
