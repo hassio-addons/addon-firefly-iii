@@ -1,4 +1,4 @@
-# Community Home Assistant Add-ons: Firefly-III
+# Community Home Assistant Add-on: Firefly-III
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -175,7 +175,7 @@ The original setup of this repository is by [Paul Sinclair][sinclairpaul].
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
 
-## We have got some add-ons for you
+## We have got some Home Assistant add-ons for you
 
 Want some more functionality to your Home Assistant instance?
 
@@ -186,7 +186,7 @@ our [GitHub Repository][repository].
 
 MIT License
 
-Copyright (c) 2020 Paul Sinclair
+Copyright (c) 2019-2020 Paul Sinclair
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

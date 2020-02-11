@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-ons: Firefly III
+# Community Home Assistant Add-on: Firefly III
 # Runs the PHP-FPM daemon
 # ==============================================================================
 
