@@ -1,6 +1,6 @@
 ---
 repository:
-  description: "Firefly-III - Community Home Assistant Add-ons"
+  description: "Firefly-III - Home Assistant Community Add-ons"
   homepage: https://addons.community
   topics: fireflyiii, addon, addons, home-assistant, homeassistant
   private: false

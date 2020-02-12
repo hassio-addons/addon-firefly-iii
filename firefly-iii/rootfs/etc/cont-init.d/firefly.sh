@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: Firefly III
+# Home Assistant Community Add-on: Firefly III
 # This file creates the file structure and configures the app key
 # ==============================================================================
 
