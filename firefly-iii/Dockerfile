@@ -13,6 +13,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
         composer=1.8.4-1 \
         locales=2.28-10 \
+        mariadb-client=1:10.3.22-0+deb10u1 \
         nginx=1.14.2-2+deb10u1 \
         php7.3-bcmath=7.3.14-1~deb10u1 \
         php7.3-curl=7.3.14-1~deb10u1 \
