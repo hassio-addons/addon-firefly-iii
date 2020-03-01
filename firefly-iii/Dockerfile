@@ -55,7 +55,6 @@ RUN \
         /etc/nginx \
         /var/{cache,log}/* \
         /var/lib/apt/lists/* \
-        /var/lib/mysql/*logfile* \
         /var/www/firefly/Docker* \
         /var/www/firefly/docker* \
         /var/www/firefly/phpunit* \
