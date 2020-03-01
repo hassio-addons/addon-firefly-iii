@@ -10,20 +10,27 @@ key=$(cat /data/firefly/appkey.txt)
 export APP_KEY=${key}
 export LOG_CHANNEL=stdout
 export APP_ENV=local
+export DB_CONNECTION=mysql
+export DB_DATABASE
+export DB_HOST
+export DB_PASSWORD
+export DB_PORT
+export DB_USERNAME
 
-DB_CONNECTION=$(bashio::config "database")
-export DB_CONNECTION
-
-if bashio::config.equals 'database' 'mysql';then
-    DB_HOST=$(bashio::config "mysql_host")
-    DB_DATABASE=$(bashio::config "mysql_database")
-    DB_USERNAME=$(bashio::config "mysql_user")
-    DB_PASSWORD=$(bashio::config "mysql_password")
-    export DB_HOST
-    export DB_DATABASE
-    export DB_USERNAME
-    export DB_PASSWORD
+if bashio::config.has_value 'remote_mysql_host';then
+    DB_HOST=$(bashio::config "remote_mysql_host")
+    DB_DATABASE=$(bashio::config "remote_mysql_database")
+    DB_USERNAME=$(bashio::config "remote_mysql_username")
+    DB_PASSWORD=$(bashio::config "remote_mysql_password")
+    DB_PORT=$(bashio::config "remote_mysql_port")
+else
+    DB_HOST=$(bashio::services "mysql" "host")
+    DB_DATABASE=firefly
+    DB_USERNAME=$(bashio::services "mysql" "username")
+    DB_PASSWORD=$(bashio::services "mysql" "password")
+    DB_PORT=$(bashio::services "mysql" "port")
 fi
+
 if bashio::config.equals 'log_level' 'debug' \
     || bashio::config.equals 'log_level' 'trace' ;then
     export APP_DEBUG=true
