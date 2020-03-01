@@ -11,26 +11,27 @@ RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
+        composer=1.8.4-1 \
         locales=2.28-10 \
         nginx=1.14.2-2+deb10u1 \
+        php7.3-bcmath=7.3.14-1~deb10u1 \
+        php7.3-curl=7.3.14-1~deb10u1 \
+        php7.3-cli=7.3.14-1~deb10u1 \
+        php7.3-common=7.3.14-1~deb10u1 \
+        php7.3-fpm=7.3.14-1~deb10u1 \
+        php7.3-gd=7.3.14-1~deb10u1 \
+        php7.3-intl=7.3.14-1~deb10u1 \
+        php7.3-json=7.3.14-1~deb10u1 \
+        php7.3-ldap=7.3.14-1~deb10u1 \
+        php7.3-mbstring=7.3.14-1~deb10u1 \
+        php7.3-mysql=7.3.14-1~deb10u1 \
+        php7.3-opcache=7.3.14-1~deb10u1 \
+        php7.3-readline=7.3.14-1~deb10u1 \
+        php7.3-sqlite3=7.3.14-1~deb10u1 \
+        php7.3-xml=7.3.14-1~deb10u1 \
+        php7.3-zip=7.3.14-1~deb10u1 \
+        php7.3=7.3.14-1~deb10u1 \
         software-properties-common=0.96.20.2-2 \
-        sqlite3=3.27.2-3 \
-        composer=1.8.4-1 \
-        php7.3-bcmath=7.3.11-1~deb10u1 \
-        php7.3-curl=7.3.11-1~deb10u1 \
-        php7.3-common=7.3.11-1~deb10u1 \
-        php7.3-fpm=7.3.11-1~deb10u1 \
-        php7.3-gd=7.3.11-1~deb10u1 \
-        php7.3-intl=7.3.11-1~deb10u1 \
-        php7.3-json=7.3.11-1~deb10u1 \
-        php7.3-ldap=7.3.11-1~deb10u1 \
-        php7.3-mbstring=7.3.11-1~deb10u1 \
-        php7.3-mysql=7.3.11-1~deb10u1 \
-        php7.3-opcache=7.3.11-1~deb10u1 \
-        php7.3-sqlite3=7.3.11-1~deb10u1 \
-        php7.3-xml=7.3.11-1~deb10u1 \
-        php7.3-zip=7.3.11-1~deb10u1 \
-        php7.3=7.3.11-1~deb10u1 \
     \
     && FIREFLY_VERSION=5.0.5 \
     \
