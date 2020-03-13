@@ -34,7 +34,7 @@ RUN \
         php7.3=7.3.11-1~deb10u1 \
         software-properties-common=0.96.20.2-2 \
     \
-    && FIREFLY_VERSION=5.1.0 \
+    && FIREFLY_VERSION=5.1.1 \
     \
     && curl -J -L -o /tmp/firefly.tar.gz \
         https://github.com/firefly-iii/firefly-iii/archive/${FIREFLY_VERSION}.tar.gz \
