@@ -12,6 +12,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         composer=1.8.4-1 \
+        git=1:2.20.1-2+deb10u1 \
         locales=2.28-10 \
         mariadb-client=1:10.3.22-0+deb10u1 \
         nginx=1.14.2-2+deb10u1 \
@@ -33,6 +34,7 @@ RUN \
         php7.3-zip=7.3.11-1~deb10u1 \
         php7.3=7.3.11-1~deb10u1 \
         software-properties-common=0.96.20.2-2 \
+        unzip=6.0-23+deb10u1 \
     \
     && FIREFLY_VERSION=5.1.1 \
     \
@@ -47,7 +49,9 @@ RUN \
     && composer install --prefer-dist --no-dev --no-scripts --no-suggest \
     && apt-get purge -y --auto-remove \
         composer \
+        git \
         software-properties-common \
+        unzip \
     \
     && apt-get clean \
     && find /var/www/firefly -type f -name "*.md" -depth -exec rm -f {} \; \
