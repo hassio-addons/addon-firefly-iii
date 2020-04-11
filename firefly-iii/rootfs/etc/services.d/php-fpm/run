@@ -4,7 +4,9 @@
 # Runs the PHP-FPM daemon
 # ==============================================================================
 
+declare currentversion
 declare key
+declare versionquery
 
 key=$(cat /data/firefly/appkey.txt)
 export APP_KEY=${key}
@@ -36,14 +38,29 @@ if bashio::config.equals 'log_level' 'debug' \
     export APP_DEBUG=true
     export APP_LOG_LEVEL=debug
 fi
+versionquery='SELECT data FROM configuration WHERE name="ff3_version"'
+currentversion=$(mysql --host="${DB_HOST}" --database="${DB_DATABASE}"  \
+    --user="${DB_USERNAME}" --execute="${versionquery}" \
+    --password="${DB_PASSWORD}" -ss -f)
+currentversion=$(sed -e 's/^"//' -e 's/"$//' <<<"$currentversion")
+
+FIREFLY_III_ACCESS_TOKEN=$(bashio::config "api_token")
+
+php /var/www/firefly/artisan package:discover > /dev/null 2>&1
+
+if [ "$currentversion" != "$FIREFLY_VERSION" ]; then
+    bashio::log.info "Current version of Firefly is ${currentversion}"
+    bashio::log.info "Release version is  ${FIREFLY_VERSION}"
 bashio::log.info "Installing/updating Database"
-php /var/www/firefly/artisan package:discover
 php /var/www/firefly/artisan migrate --seed
 php /var/www/firefly/artisan firefly:decrypt-all
 php /var/www/firefly/artisan firefly:upgrade-database
 php /var/www/firefly/artisan passport:install
-php /var/www/firefly/artisan cache:clear
-php /var/www/firefly/artisan config:cache
+fi
+
+php /var/www/firefly/artisan cache:clear > /dev/null 2>&1
+php /var/www/firefly/artisan config:cache > /dev/null 2>&1
+
 
 bashio::log.info "Starting PHP-FPM..."
 
