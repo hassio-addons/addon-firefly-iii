@@ -16,6 +16,7 @@ if ! bashio::fs.directory_exists "/data/firefly/upload"; then
     chown www-data:www-data /data/firefly/upload
 fi
 
+chown -R www-data:www-data /var/www/csvimport/storage
 rm -r /var/www/firefly/storage/upload
 ln -s /data/firefly/upload /var/www/firefly/storage/upload
 
