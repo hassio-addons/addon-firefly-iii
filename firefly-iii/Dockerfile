@@ -5,6 +5,7 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+ENV FIREFLY_VERSION 5.2.0
 # Setup base
 # hadolint ignore=DL3003
 RUN \
