@@ -5,7 +5,6 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-ENV FIREFLY_VERSION 5.2.0
 # Setup base
 # hadolint ignore=DL3003
 RUN \
@@ -37,22 +36,16 @@ RUN \
         software-properties-common=0.96.20.2-2 \
         unzip=6.0-23+deb10u1 \
     \
-    && CSVIMPORT_VERSION=1.0.1 \
+    && FIREFLY_VERSION=5.2.0 \
     \
     && curl -J -L -o /tmp/firefly.tar.gz \
         https://github.com/firefly-iii/firefly-iii/archive/${FIREFLY_VERSION}.tar.gz \
-    && curl -J -L -o /tmp/csvimport.tar.gz \
-        https://github.com/firefly-iii/csv-importer/archive/${CSVIMPORT_VERSION}.tar.gz \
-    &&  mkdir -p /var/www/firefly /var/www/csvimport \
+    &&  mkdir -p /var/www/firefly \
     && tar zxf /tmp/firefly.tar.gz -C \
         /var/www/firefly --strip-components=1 \
-    && tar zxf /tmp/csvimport.tar.gz -C \
-        /var/www/csvimport --strip-components=1 \
     && printf "vi_VN.UTF-8 UTF-8\nfi_FI.UTF-8 UTF-8\nsv_SE.UTF-8 UTF-8\nel_GR.UTF-8 UTF-8\nhu_HU.UTF-8 UTF-8\nro_RO.UTF-8 UTF-8\nnb_NO.UTF-8 UTF-8\nde_DE.UTF-8 UTF-8\ncs_CZ.UTF-8 UTF-8\nen_US.UTF-8 UTF-8\nes_ES.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8\nid_ID.UTF-8 UTF-8\nit_IT.UTF-8 UTF-8\nnl_NL.UTF-8 UTF-8\npl_PL.UTF-8 UTF-8\npt_BR.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8\ntr_TR.UTF-8 UTF-8\nzh_TW.UTF-8 UTF-8\nzh_CN.UTF-8 UTF-8\n\n" > /etc/locale.gen \
     && locale-gen \
     && cd /var/www/firefly \
-    && composer install --prefer-dist --no-dev --no-scripts --no-suggest \
-    && cd /var/www/csvimport \
     && composer install --prefer-dist --no-dev --no-scripts --no-suggest \
     && apt-get purge -y --auto-remove \
         composer \

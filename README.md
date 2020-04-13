@@ -84,10 +84,6 @@ The certificate file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is the default._
 
-### Option: `api_token'
-
-If using the CSV import functionality, the API key to be used.
-
 ### Option: `keyfile`
 
 The private key file to use for SSL.
@@ -122,12 +118,6 @@ By default, Firefly-III will automatically use and configure the Home Assistant
 MariaDB addon which should be installed prior to startup, this can be changed
 within the configuration to use an external MySql/MariaDB Database. Please note
 that there is no easy upgrade path between the two options.
-
-## CSV Import Utility
-
-The addon has the CSV Import tool bundled, which must be configured with the
-`api_token` option and have its own network port set. Please see further
-information at [Firefly-CSV]
 
 ## Known issues and limitations
 
@@ -217,7 +207,6 @@ SOFTWARE.
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [Firefly-III]: https://firefly-iii.org/
-[Firefly-CSV]: https://github.com/firefly-iii/csv-importer/blob/master/README.md
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/sinclairpaul
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-firefly-iii.svg

@@ -5,11 +5,3 @@ server {
     include /etc/nginx/includes/php.conf;
 
 }
-
-server {
-    listen 81 default_server;
-
-    include /etc/nginx/includes/import_server_params.conf;
-    include /etc/nginx/includes/php.conf;
-
-}

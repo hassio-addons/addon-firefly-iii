@@ -13,12 +13,10 @@
   "hassio_role": "default",
   "map": ["ssl"],
   "ports": {
-    "80/tcp": 3473,
-    "81/tcp": null
+    "80/tcp": 3473
   },
   "ports_description": {
-    "80/tcp": "Web interface",
-    "81/tcp": "CSV Import Interface"
+    "80/tcp": "Web interface"
   },
   "options": {
     "ssl": false,
@@ -26,7 +24,6 @@
     "keyfile": "privkey.pem"
   },
   "schema": {
-    "api_token": "str?",
     "remote_mysql_host": "str?",
     "remote_mysql_database": "str?",
     "remote_mysql_username": "str?",

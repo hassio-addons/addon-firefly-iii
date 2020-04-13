@@ -9,15 +9,3 @@ server {
     ssl_certificate_key /ssl/%%keyfile%%;
 
 }
-
-server {
-    listen 81 default_server ssl http2;
-
-    include /etc/nginx/includes/import_server_params.conf;
-    include /etc/nginx/includes/ssl_params.conf;
-    include /etc/nginx/includes/php.conf;
-
-    ssl_certificate /ssl/%%certfile%%;
-    ssl_certificate_key /ssl/%%keyfile%%;
-
-}
