@@ -36,7 +36,7 @@ RUN \
         software-properties-common=0.96.20.2-2 \
         unzip=6.0-23+deb10u1 \
     \
-    && FIREFLY_VERSION=5.2.3 \
+    && FIREFLY_VERSION=5.2.5 \
     \
     && curl -J -L -o /tmp/firefly.tar.gz \
         https://github.com/firefly-iii/firefly-iii/archive/${FIREFLY_VERSION}.tar.gz \
