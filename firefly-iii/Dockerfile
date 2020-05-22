@@ -12,7 +12,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         composer=1.8.4-1 \
-        git=1:2.20.1-2+deb10u1 \
+        git=1:2.20.1-2+deb10u3 \
         locales=2.28-10 \
         mariadb-client=1:10.3.22-0+deb10u1 \
         nginx=1.14.2-2+deb10u1 \
