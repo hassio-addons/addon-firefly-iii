@@ -21,7 +21,8 @@
   "options": {
     "ssl": false,
     "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem"
+    "keyfile": "privkey.pem",
+    "mapbox_api_key": ""
   },
   "schema": {
     "remote_mysql_host": "str?",
@@ -32,6 +33,7 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     "certfile": "str",
     "keyfile": "str",
-    "ssl": "bool"
+    "ssl": "bool",
+    "mapbox_api_key": "str"
   }
 }
