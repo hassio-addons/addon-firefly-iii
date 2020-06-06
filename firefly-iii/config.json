@@ -32,6 +32,7 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     "certfile": "str",
     "keyfile": "str",
-    "ssl": "bool"
+    "ssl": "bool",
+    "mapbox_api_key": "str?"
   }
 }
