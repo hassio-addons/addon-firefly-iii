@@ -4,13 +4,10 @@
 # Runs the PHP-FPM daemon
 # ==============================================================================
 
-CONFIG_PATH=/data/options.json
-
 declare key
 
 key=$(cat /data/firefly/appkey.txt)
 export APP_KEY=${key}
-export MAPBOX_API_KEY=$(jq --raw-output ".mapbox_api_key" $CONFIG_PATH)
 export LOG_CHANNEL=stdout
 export APP_ENV=local
 export DB_CONNECTION=mysql
@@ -19,6 +16,10 @@ export DB_HOST
 export DB_PASSWORD
 export DB_PORT
 export DB_USERNAME
+
+if bashio::config.has_value 'mapbox_api_key';then
+    export MAPBOX_API_KEY=$(bashio::config "mapbox_api_key")
+fi
 
 if bashio::config.has_value 'remote_mysql_host';then
     DB_HOST=$(bashio::config "remote_mysql_host")
