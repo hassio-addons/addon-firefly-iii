@@ -35,6 +35,7 @@ RUN \
         php7.3=7.3.11-1~deb10u1 \
         software-properties-common=0.96.20.2-2 \
         unzip=6.0-23+deb10u1 \
+        wget=1.20.1-1.1 \
     \
     && FIREFLY_VERSION=5.2.8 \
     \
@@ -52,6 +53,7 @@ RUN \
         git \
         software-properties-common \
         unzip \
+        wget \
     \
     && apt-get clean \
     && find /var/www/firefly -type f -name "*.md" -depth -exec rm -f {} \; \
