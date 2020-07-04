@@ -11,31 +11,36 @@ RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        composer=1.8.4-1 \
         git=1:2.20.1-2+deb10u3 \
         locales=2.28-10 \
         mariadb-client=1:10.3.22-0+deb10u1 \
         nginx=1.14.2-2+deb10u1 \
-        php7.3-bcmath=7.3.11-1~deb10u1 \
-        php7.3-curl=7.3.11-1~deb10u1 \
-        php7.3-cli=7.3.11-1~deb10u1 \
-        php7.3-common=7.3.11-1~deb10u1 \
-        php7.3-fpm=7.3.11-1~deb10u1 \
-        php7.3-gd=7.3.11-1~deb10u1 \
-        php7.3-intl=7.3.11-1~deb10u1 \
-        php7.3-json=7.3.11-1~deb10u1 \
-        php7.3-ldap=7.3.11-1~deb10u1 \
-        php7.3-mbstring=7.3.11-1~deb10u1 \
-        php7.3-mysql=7.3.11-1~deb10u1 \
-        php7.3-opcache=7.3.11-1~deb10u1 \
-        php7.3-readline=7.3.11-1~deb10u1 \
-        php7.3-sqlite3=7.3.11-1~deb10u1 \
-        php7.3-xml=7.3.11-1~deb10u1 \
-        php7.3-zip=7.3.11-1~deb10u1 \
-        php7.3=7.3.11-1~deb10u1 \
         software-properties-common=0.96.20.2-2 \
         unzip=6.0-23+deb10u1 \
         wget=1.20.1-1.1 \
+    #Requires PHP 7.4
+    && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
+    && echo "deb https://packages.sury.org/php/ buster main" > /etc/apt/sources.list.d/php.list \
+    && apt-get update \
+    && apt-get install  -y --no-install-recommends \
+        composer=1.8.4-1 \
+        php7.4-bcmath=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-curl=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-cli=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-common=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-fpm=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-gd=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-intl=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-json=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-ldap=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-mbstring=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-mysql=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-opcache=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-readline=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-sqlite3=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-xml=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-zip=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
     \
     && FIREFLY_VERSION=5.2.8 \
     \
