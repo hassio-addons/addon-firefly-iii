@@ -17,9 +17,8 @@ RUN \
         nginx=1.14.2-2+deb10u1 \
         software-properties-common=0.96.20.2-2 \
         unzip=6.0-23+deb10u1 \
-        wget=1.20.1-1.1 \
     #Requires PHP 7.4
-    && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
+    && curl -J -L -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
     && echo "deb https://packages.sury.org/php/ buster main" > /etc/apt/sources.list.d/php.list \
     && apt-get update \
     && apt-get install  -y --no-install-recommends \
@@ -58,7 +57,6 @@ RUN \
         git \
         software-properties-common \
         unzip \
-        wget \
     \
     && apt-get clean \
     && find /var/www/firefly -type f -name "*.md" -depth -exec rm -f {} \; \
