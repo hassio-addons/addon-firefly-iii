@@ -23,23 +23,22 @@ RUN \
     && apt-get update \
     && apt-get install  -y --no-install-recommends \
         composer=1.8.4-1 \
-        php7.4-bcmath=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-curl=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-cli=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-common=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-fpm=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-gd=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-intl=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-json=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-ldap=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-mbstring=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-mysql=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-opcache=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-readline=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-sqlite3=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-xml=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4-zip=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
-        php7.4=7.4.7-1+0~20200612.18+debian10~1.gbp671911 \
+        php7.4-bcmath=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-curl=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-cli=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-common=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-fpm=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-gd=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-intl=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-ldap=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-mbstring=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-mysql=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-opcache=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-readline=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-sqlite3=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-xml=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4-zip=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c \
+        php7.4=7.4.8-1+0~20200713.23+debian10~1.gbpb2c15c\
     \
     && FIREFLY_VERSION=5.3.1 \
     \
