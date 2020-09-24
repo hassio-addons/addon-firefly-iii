@@ -13,8 +13,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
         git=1:2.20.1-2+deb10u3 \
         locales=2.28-10 \
-        mariadb-client=1:10.3.22-0+deb10u1 \
-        nginx=1.14.2-2+deb10u1 \
+        mariadb-client=1:10.3.23-0+deb10u1 \
         software-properties-common=0.96.20.2-2 \
         unzip=6.0-23+deb10u1 \
     #Requires PHP 7.4
