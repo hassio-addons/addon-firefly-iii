@@ -40,7 +40,7 @@ RUN \
         php7.4-zip=7.4.10-1+0~20200909.25+debian10~1.gbpe666e1 \
         php7.4=7.4.10-1+0~20200909.25+debian10~1.gbpe666e1\
     \
-    && FIREFLY_VERSION=5.4.1 \
+    && FIREFLY_VERSION=5.4.3 \
     \
     && curl -J -L -o /tmp/firefly.tar.gz \
         https://github.com/firefly-iii/firefly-iii/archive/${FIREFLY_VERSION}.tar.gz \
