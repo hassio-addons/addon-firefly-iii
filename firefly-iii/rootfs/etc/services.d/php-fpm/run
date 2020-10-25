@@ -42,11 +42,46 @@ if bashio::config.equals 'log_level' 'debug' \
     export APP_LOG_LEVEL=debug
 fi
 bashio::log.info "Installing/updating Database"
-php /var/www/firefly/artisan package:discover > /dev/null 2>&1
-php /var/www/firefly/artisan migrate --seed > /dev/null 2>&1
-php /var/www/firefly/artisan firefly:decrypt-all > /dev/null 2>&1
-php /var/www/firefly/artisan firefly:upgrade-database > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:create-database > /dev/null 2>&1
+php /var/www/firefly/artisan migrate --seed --no-interaction --force > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:decrypt-all > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:transaction-identifiers > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:migrate-to-groups > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:account-currencies > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:transfer-currencies > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:other-currencies > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:migrate-notes > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:migrate-attachments > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:bills-to-rules > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:bl-currency > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:cc-liabilities > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:back-to-journals > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:rename-account-meta > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:migrate-recurrence-meta > /dev/null 2>&1
+
+php /var/www/firefly/artisan firefly-iii:fix-piggies > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:create-link-types > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:create-access-tokens > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:remove-bills > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:enable-currencies > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:fix-transfer-budgets > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:fix-uneven-amount > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:delete-zero-amount > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:delete-orphaned-transactions > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:delete-empty-journals > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:delete-empty-groups > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:fix-account-types > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:rename-meta-fields > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:fix-ob-currencies > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:fix-long-descriptions > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:fix-recurring-transactions > /dev/null 2>&1
+
+php /var/www/firefly/artisan firefly-iii:report-empty-objects > /dev/null 2>&1
+php /var/www/firefly/artisan firefly-iii:report-sum > /dev/null 2>&1
+
 php /var/www/firefly/artisan passport:install > /dev/null 2>&1
+
+php /var/www/firefly/artisan firefly-iii:set-latest-version --james-is-cool > /dev/null 2>&1
 php /var/www/firefly/artisan cache:clear > /dev/null 2>&1
 php /var/www/firefly/artisan config:cache > /dev/null 2>&1
 
