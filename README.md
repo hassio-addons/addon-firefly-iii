@@ -20,6 +20,13 @@
 
 Firefly-III - A free and open source personal finance manager
 
+## Deprecation warning
+
+**This add-on is in a deprecated state!**
+
+The Firefly III add-on is now deprecated and will no longer be supported,
+maintained and will not receive future updates or fixes.
+
 ## About
 
 "Firefly III" is a self-hosted financial manager. It can help you keep track of
